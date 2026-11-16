@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Study App</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">📚 Smart Study</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#planner">Study Planner</a>
+            <a href="#resources">Resources</a>
+            <a href="#questions">Important Questions</a>
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+            <h1>Study Smarter, Not Harder!</h1>
+
+            <p>
+                Your personal AI-powered study companion.
+                Plan your preparation, manage time, and achieve your goals.
+            </p>
+
+            <a href="#planner" class="btn">Start Planning</a>
+        </div>
+
+    </section>
+
+
+    <!-- Study Planner Section -->
+    <section id="planner" class="container">
+
+        <h2>Create Your Study Plan</h2>
+
+        <p>Enter your exam details to generate a personalized study schedule.</p>
+
+        <div class="planner-box">
+
+            <form id="studyForm">
+
+                <label for="subject">Enter Subject:</label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="e.g. Data Structures"
+                    required
+                >
+
+                <label for="examDate">Exam Date:</label>
+
+                <input
+                    type="date"
+                    id="examDate"
+                    required
+                >
+
+                <label for="hours">Daily Study Hours:</label>
+
+                <input
+                    type="number"
+                    id="hours"
+                    min="1"
+                    max="16"
+                    value="4"
+                    required
+                >
+
+                <label for="level">Preparation Level:</label>
+
+                <select id="level">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+
+                <label for="topics">Enter Topics (comma separated):</label>
+
+                <textarea
+                    id="topics"
+                    placeholder="Arrays, Linked List, Stack, Queue..."
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Generate Study Plan
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Study Schedule Section -->
+    <section class="container">
+
+        <h2>Your Study Schedule</h2>
+
+        <div id="schedule" class="schedule-box">
+
+            <p>Your generated study schedule will appear here.</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Progress Section -->
+    <section class="container">
+
+        <h2>Study Progress</h2>
+
+        <div class="progress-container">
+
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+
+            <p id="progressText">0% Completed</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Resources Section -->
+    <section id="resources" class="container">
+
+        <h2>Study Resources</h2>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <h3>📺 YouTube Lectures</h3>
+
+                <p>Find video lectures for your subject.</p>
+
+                <a id="youtubeLink" href="#" target="_blank">
+                    Watch Lectures
+                </a>
+            </div>
+
+
+            <div class="resource-card">
+                <h3>📄 Previous Year Papers</h3>
+
+                <p>Practice previous year question papers.</p>
+
+                <a id="pyqLink" href="#" target="_blank">
+                    Find PYQs
+                </a>
+            </div>
+
+
+            <div class="resource-card">
+                <h3>⭐ Important Questions</h3>
+
+                <p>Prepare important questions for your exam.</p>
+
+                <a href="#questions">
+                    View Questions
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Important Questions Section -->
+    <section id="questions" class="container">
+
+        <h2>Important Questions</h2>
+
+        <div id="questionsBox" class="questions-box">
+
+            <p>Enter your subject to explore important questions.</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>📚 Smart Study App</h3>
+
+        <p>Study Smart. Stay Consistent. Achieve Success.</p>
+
+        <p>© 2026 Smart Study App. All Rights Reserved.</p>
+
+    </footer>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
