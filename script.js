@@ -194,7 +194,7 @@ function generateQuestions(subject, topics) {
 // ==========================================
 
 // Backend API URL
-const API_URL = "http://localhost:3000/api/questions";
+const API_URL = "https://study-planner-backend-4ezh.onrender.com/api/questions";
 
 // Store previously displayed questions
 let seenQuestionIds = JSON.parse(
@@ -245,8 +245,12 @@ async function startGateQuiz(level) {
 
     try {
 
+        // Get selected subject
+        const subject = document.getElementById("subject").value.trim();
+
+        // Fetch questions from Render backend
         const response = await fetch(
-            `${API_URL}?level=${encodeURIComponent(level)}`
+            `${API_URL}?subject=${encodeURIComponent(subject)}&level=${encodeURIComponent(level)}`
         );
 
         if (!response.ok) {
