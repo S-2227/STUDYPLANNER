@@ -1,0 +1,21 @@
+{
+  "name": "ai-study-planner",
+  "version": "1.0.0",
+  "description": "StudyPilot – A Smart Study Planner that helps students create personalized study schedules, track their progress, and access learning resources for effective exam preparation.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S-2227/STUDYPLANNER.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/S-2227/STUDYPLANNER/issues"
+  },
+  "homepage": "https://github.com/S-2227/STUDYPLANNER#readme"
+}

@@ -229,3 +229,272 @@ footer p {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(8px);
 }
+/* GATE PYQ QUIZ */
+
+#quiz {
+    padding: 25px;
+}
+
+.quiz-header {
+    margin-bottom: 30px;
+}
+
+.quiz-header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.quiz-header p {
+    color: #777;
+}
+
+
+/* Difficulty Cards */
+
+.quiz-level-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.level-card {
+    padding: 25px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+}
+
+.level-card h2 {
+    margin-bottom: 10px;
+}
+
+.level-card p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.level-card button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+}
+
+.easy-card {
+    border-top: 5px solid #22c55e;
+}
+
+.easy-card button {
+    background: #22c55e;
+}
+
+.moderate-card {
+    border-top: 5px solid #f59e0b;
+}
+
+.moderate-card button {
+    background: #f59e0b;
+}
+
+.advanced-card {
+    border-top: 5px solid #ef4444;
+}
+
+.advanced-card button {
+    background: #ef4444;
+}
+
+
+/* Quiz Panel */
+
+.gate-quiz-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quiz-top p {
+    color: #777;
+    margin-top: 5px;
+}
+
+#questionCounter {
+    background: #eef2ff;
+    color: #4f46e5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+
+/* Progress Bar */
+
+.quiz-progress {
+    height: 9px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+#quizProgressBar {
+    width: 0%;
+    height: 100%;
+    background: #6366f1;
+    transition: 0.4s;
+}
+
+
+/* Question */
+
+#questionArea {
+    padding: 20px 0;
+    min-height: 150px;
+}
+
+#questionArea h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* Answer Options */
+
+.gate-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.gate-option:hover {
+    background: #eef2ff;
+    border-color: #6366f1;
+}
+
+.gate-option.selected {
+    background: #e0e7ff;
+    border: 2px solid #6366f1;
+}
+
+.gate-option.correct {
+    background: #dcfce7;
+    border-color: #22c55e;
+}
+
+.gate-option.wrong {
+    background: #fee2e2;
+    border-color: #ef4444;
+}
+
+
+/* Quiz Buttons */
+
+.quiz-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.quiz-actions button,
+#retryGateQuiz {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#nextGateQuestion {
+    background: #16a34a;
+}
+
+.quiz-actions button:hover,
+#retryGateQuiz:hover {
+    opacity: 0.85;
+}
+
+
+/* Feedback */
+
+#answerFeedback {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+
+/* Result */
+
+#gateQuizResult {
+    display: none;
+    text-align: center;
+    padding: 30px;
+}
+
+#gateFinalScore {
+    font-size: 45px;
+    color: #4f46e5;
+    margin: 20px 0;
+}
+
+.result-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 25px 0;
+}
+
+.result-stats h3 {
+    font-size: 25px;
+    color: #16a34a;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .quiz-level-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .quiz-actions {
+        flex-direction: column;
+    }
+
+    .gate-quiz-panel {
+        padding: 20px;
+    }
+
+}
