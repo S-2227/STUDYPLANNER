@@ -374,9 +374,7 @@ function displayQuestion(question) {
 }
 
 
-// ==========================================
-// 9. SELECT ANSWER
-// ==========================================
+
 
 function selectOption(index) {
 
