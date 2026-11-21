@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Load questions from JSON file
+
 const questionsPath = path.join(__dirname, "questions.json");
 
 function getQuestions() {
@@ -17,7 +17,7 @@ function getQuestions() {
     );
 }
 
-// Normalize subject names
+
 function normalizeSubject(subject) {
     const value = subject.toLowerCase().trim();
 
@@ -59,7 +59,7 @@ app.get("/api/questions", (req, res) => {
 
         let filteredQuestions = questions;
 
-        // Filter questions according to subject
+        
         if (subject) {
 
             filteredQuestions = filteredQuestions.filter(
@@ -70,7 +70,7 @@ app.get("/api/questions", (req, res) => {
 
         }
 
-        // Filter questions according to difficulty
+      
         if (level) {
 
             filteredQuestions = filteredQuestions.filter(
@@ -93,12 +93,12 @@ app.get("/api/questions", (req, res) => {
 
 });
 
-// Test API
+
 app.get("/", (req, res) => {
     res.send("GATE PYQ Backend is running!");
 });
 
-// Start server
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
