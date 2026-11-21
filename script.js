@@ -1,6 +1,4 @@
-// ==========================================
-// 1. GET HTML ELEMENTS
-// ==========================================
+
 
 const studyForm = document.getElementById("studyForm");
 const schedule = document.getElementById("schedule");
@@ -9,9 +7,6 @@ const progressText = document.getElementById("progressText");
 const questionsBox = document.getElementById("questionsBox");
 
 
-// ==========================================
-// 2. GENERATE STUDY PLAN
-// ==========================================
 
 studyForm.addEventListener("submit", function (e) {
 
@@ -23,7 +18,7 @@ studyForm.addEventListener("submit", function (e) {
     const level = document.getElementById("level").value;
     const topicsInput = document.getElementById("topics").value;
 
-    // Validate input
+    
     if (!subject || !examDate || hours < 1) {
         alert("Please enter valid details!");
         return;
@@ -39,12 +34,11 @@ studyForm.addEventListener("submit", function (e) {
         return;
     }
 
-    // Calculate remaining days
+   
     const daysLeft = Math.ceil(
         (exam - today) / (1000 * 60 * 60 * 24)
     );
 
-    // Get topics
     let topics = topicsInput
         .split(",")
         .map(topic => topic.trim())
@@ -60,7 +54,7 @@ studyForm.addEventListener("submit", function (e) {
         ];
     }
 
-    // Generate Schedule
+   
     let html = "";
 
     html += `<h3>${subject} Study Plan</h3>`;
@@ -104,7 +98,7 @@ studyForm.addEventListener("submit", function (e) {
 
     generateQuestions(subject, topics);
 
-    // Generate Resource Links
+    
     document.getElementById("youtubeLink").href =
         "https://www.youtube.com/results?search_query=" +
         encodeURIComponent(subject + " lectures");
@@ -116,9 +110,6 @@ studyForm.addEventListener("submit", function (e) {
 });
 
 
-// ==========================================
-// 3. UPDATE STUDY PROGRESS
-// ==========================================
 
 function updateProgress() {
 
@@ -140,7 +131,7 @@ function updateProgress() {
 }
 
 
-// Listen for checkbox changes
+
 schedule.addEventListener("change", function (e) {
 
     if (e.target.classList.contains("task-check")) {
@@ -150,9 +141,7 @@ schedule.addEventListener("change", function (e) {
 });
 
 
-// ==========================================
-// 4. GENERATE IMPORTANT QUESTIONS
-// ==========================================
+
 
 function generateQuestions(subject, topics) {
 
@@ -189,14 +178,12 @@ function generateQuestions(subject, topics) {
 }
 
 
-// ==========================================
-// 5. DYNAMIC GATE PYQ QUIZ SYSTEM
-// ==========================================
 
-// Backend API URL
+
+
 const API_URL = "https://study-planner-backend-4ezh.onrender.com/api/questions";
 
-// Store previously displayed questions
+
 let seenQuestionIds = JSON.parse(
     localStorage.getItem("attemptedGateQuestions") || "[]"
 );
@@ -213,9 +200,7 @@ let activeLevel = "";
 
 
 
-// ==========================================
-// 6. START QUIZ
-// ==========================================
+
 
 async function startGateQuiz(level) {
 
@@ -245,10 +230,10 @@ async function startGateQuiz(level) {
 
     try {
 
-        // Get selected subject
+     
         const subject = document.getElementById("subject").value.trim();
 
-        // Fetch questions from Render backend
+       
         const response = await fetch(
             `${API_URL}?subject=${encodeURIComponent(subject)}&level=${encodeURIComponent(level)}`
         );
@@ -259,12 +244,12 @@ async function startGateQuiz(level) {
 
         const questions = await response.json();
 
-        // Get only questions not attempted before
+       
         availableQuestions = questions.filter(
             question => !seenQuestionIds.includes(question.id)
         );
 
-        // If no questions remain
+       
         if (availableQuestions.length === 0) {
 
             questionArea.innerHTML = `
@@ -279,13 +264,12 @@ async function startGateQuiz(level) {
             return;
         }
 
-        // Shuffle questions randomly
+       
         availableQuestions.sort(() => Math.random() - 0.5);
 
-        // Select maximum 15 questions per attempt
+        
         availableQuestions = availableQuestions.slice(0, 15);
 
-        // Total questions in current attempt
         totalQuestions = availableQuestions.length;
 
         loadRandomQuestion();
@@ -303,9 +287,6 @@ async function startGateQuiz(level) {
 
 
 
-// ==========================================
-// 7. LOAD RANDOM QUESTION
-// ==========================================
 
 function loadRandomQuestion() {
 
@@ -322,7 +303,6 @@ function loadRandomQuestion() {
 
     currentQuestionNumber++;
 
-    // Save question ID immediately so it won't repeat
     if (!seenQuestionIds.includes(currentQuestion.id)) {
 
         seenQuestionIds.push(currentQuestion.id);
@@ -340,10 +320,6 @@ function loadRandomQuestion() {
 
 }
 
-
-// ==========================================
-// 8. DISPLAY QUESTION
-// ==========================================
 
 function displayQuestion(question) {
 
@@ -419,9 +395,6 @@ function selectOption(index) {
 }
 
 
-// ==========================================
-// 10. CHECK ANSWER
-// ==========================================
 
 document.getElementById("submitAnswer").addEventListener("click", function () {
 
@@ -494,7 +467,6 @@ document.getElementById("submitAnswer").addEventListener("click", function () {
 
     }
 
-    // Disable answer buttons
     document.querySelectorAll(".gate-option").forEach(button => {
 
         button.disabled = true;
@@ -508,9 +480,7 @@ document.getElementById("submitAnswer").addEventListener("click", function () {
 });
 
 
-// ==========================================
-// 11. NEXT QUESTION
-// ==========================================
+
 
 document.getElementById("nextGateQuestion").addEventListener("click", function () {
 
@@ -518,10 +488,6 @@ document.getElementById("nextGateQuestion").addEventListener("click", function (
 
 });
 
-
-// ==========================================
-// 12. FINISH QUIZ
-// ==========================================
 
 function finishGateQuiz() {
 
@@ -574,9 +540,6 @@ function finishGateQuiz() {
 }
 
 
-// ==========================================
-// 13. RETRY QUIZ
-// ==========================================
 
 document.getElementById("retryGateQuiz").addEventListener("click", function () {
 
