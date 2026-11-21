@@ -1,4 +1,4 @@
-/* General Styling */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ body {
     color: #1e293b;
 }
 
-/* Header */
+
 header {
     background: linear-gradient(90deg, #312e81, #4f46e5);
     color: white;
@@ -41,7 +41,7 @@ nav a:hover {
     color: #facc15;
 }
 
-/* Hero Section */
+
 .hero {
     min-height: 350px;
     background: linear-gradient(120deg, #4338ca, #7c3aed, #9333ea);
@@ -63,7 +63,7 @@ nav a:hover {
     margin-bottom: 25px;
 }
 
-/* Main Container */
+
 .container {
     width: 85%;
     margin: 40px auto;
@@ -75,7 +75,7 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-/* Planner Box */
+
 .planner-box,
 .schedule-box,
 .questions-box {
@@ -86,7 +86,7 @@ nav a:hover {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Form */
+
 form {
     display: flex;
     flex-direction: column;
@@ -110,7 +110,7 @@ textarea:focus {
     border-color: #6366f1;
 }
 
-/* Buttons */
+
 .btn {
     background: linear-gradient(90deg, #4f46e5, #9333ea);
     color: white;
@@ -128,7 +128,7 @@ textarea:focus {
     box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
 }
 
-/* Resource Cards */
+
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -162,7 +162,7 @@ textarea:focus {
     text-decoration: none;
 }
 
-/* Progress Bar */
+
 .progress-container {
     background: white;
     padding: 25px;
@@ -183,7 +183,7 @@ textarea:focus {
     transition: width 0.4s;
 }
 
-/* Footer */
+
 footer {
     background: #1e1b4b;
     color: white;
@@ -196,7 +196,7 @@ footer p {
     margin-top: 10px;
 }
 
-/* Mobile Responsive */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -216,20 +216,20 @@ footer p {
         width: 92%;
     }
 }
-/* Study Planner Background */
+
 #planner {
     background: linear-gradient(135deg, #e0e7ff, #f3e8ff, #dbeafe);
     padding: 25px;
     border-radius: 20px;
 }
 
-/* Make planner cards slightly transparent */
+
 #planner .panel,
 #planner .planner-aside {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(8px);
 }
-/* GATE PYQ QUIZ */
+
 
 #quiz {
     padding: 25px;
@@ -249,7 +249,7 @@ footer p {
 }
 
 
-/* Difficulty Cards */
+
 
 .quiz-level-grid {
     display: grid;
@@ -313,7 +313,7 @@ footer p {
 }
 
 
-/* Quiz Panel */
+
 
 .gate-quiz-panel {
     background: white;
@@ -343,7 +343,7 @@ footer p {
 }
 
 
-/* Progress Bar */
+
 
 .quiz-progress {
     height: 9px;
@@ -361,7 +361,7 @@ footer p {
 }
 
 
-/* Question */
+
 
 #questionArea {
     padding: 20px 0;
@@ -374,7 +374,7 @@ footer p {
 }
 
 
-/* Answer Options */
+
 
 .gate-option {
     display: block;
@@ -411,7 +411,7 @@ footer p {
 }
 
 
-/* Quiz Buttons */
+
 
 .quiz-actions {
     display: flex;
@@ -440,7 +440,7 @@ footer p {
 }
 
 
-/* Feedback */
+
 
 #answerFeedback {
     margin-top: 15px;
@@ -448,7 +448,7 @@ footer p {
 }
 
 
-/* Result */
+
 
 #gateQuizResult {
     display: none;
@@ -475,7 +475,7 @@ footer p {
 }
 
 
-/* Responsive Design */
+
 
 @media (max-width: 768px) {
 
